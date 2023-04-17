@@ -1,3 +1,3 @@
 ~$SIR_A_SANCHEZ_PAEZ_JAVIER_NETWORKING.docx
-# ./netbox
-#./docker/jenkins/*
+netbox/
+docker/jenkins/*
