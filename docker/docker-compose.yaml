@@ -3,12 +3,26 @@ services:
   jenkins:
     image: jenkins/jenkins:lts-jdk11
     volumes:
-      - ./jenkins_home/:/var/jenkins_home/
+      - ./jenkins:/var/jenkins_home
     ports:
       - 8080:8080
       - 50000:50000
+    networks:
+      pi:
+        ipv4_address: 10.0.10.10
   ansible:
     image: javsanpae/ansible
     volumes:
       - ./ansible:/ansible
     tty: true # si no añadimos esta linea, el contenedor se cierra automaticamente al no detectar trabajos
+    networks:
+      pi:
+        ipv4_address: 10.0.10.20
+  
+networks:
+  pi:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.0.10.0/24
+          gateway: 10.0.10.1

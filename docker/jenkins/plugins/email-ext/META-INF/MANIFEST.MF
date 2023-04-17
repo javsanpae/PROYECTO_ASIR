@@ -1,0 +1,28 @@
+Manifest-Version: 1.0
+Created-By: Maven Archiver 3.6.0
+Build-Jdk-Spec: 11
+Specification-Title: Email Extension Plugin
+Specification-Version: 2.96
+Implementation-Title: Email Extension Plugin
+Implementation-Version: 2.96
+Plugin-Class: hudson.plugins.emailext.EmailExtensionPlugin
+Group-Id: org.jenkins-ci.plugins
+Short-Name: email-ext
+Long-Name: Email Extension Plugin
+Url: https://github.com/jenkinsci/email-ext-plugin
+Compatible-Since-Version: 2.57.2
+Plugin-Version: 2.96
+Hudson-Version: 2.361.4
+Jenkins-Version: 2.361.4
+Plugin-Dependencies: jakarta-mail-api:2.0.1-3,workflow-job:1289.vd1c337f
+ d5354;resolution:=optional,workflow-step-api:639.v6eca_cd8c04a_a_;resol
+ ution:=optional,config-file-provider:3.11.1;resolution:=optional,creden
+ tials:1189.vf61b_a_5e2f62e,jackson2-api:2.14.2-319.v37853346a_229,junit
+ :1189.v1b_e593637fa_e,mailer:448.v5b_97805e3767,matrix-project:785.v06b
+ _7f47b_c631,scm-api:631.v9143df5b_e4a_a,script-security:1229.v4880b_b_e
+ 905a_6,structs:324.va_f5d6774f3a_d,token-macro:321.vd7cc1f2a_52c8
+Plugin-Developers: Basil Crow:basil:me@basilcrow.com
+Plugin-License-Name: The MIT License (MIT)
+Plugin-License-Url: https://opensource.org/licenses/MIT
+Plugin-ScmUrl: https://github.com/jenkinsci/email-ext-plugin
+

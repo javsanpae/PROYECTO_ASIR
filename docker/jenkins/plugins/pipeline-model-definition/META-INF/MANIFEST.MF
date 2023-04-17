@@ -1,0 +1,32 @@
+Manifest-Version: 1.0
+Created-By: Maven Archiver 3.6.0
+Build-Jdk-Spec: 11
+Specification-Title: Pipeline: Declarative
+Specification-Version: 0.0
+Implementation-Title: Pipeline: Declarative
+Implementation-Version: 2.2125.vddb_a_44a_d605e
+Group-Id: org.jenkinsci.plugins
+Short-Name: pipeline-model-definition
+Long-Name: Pipeline: Declarative
+Url: https://github.com/jenkinsci/pipeline-model-definition-plugin
+Compatible-Since-Version: 1.6.0
+Plugin-Version: 2.2125.vddb_a_44a_d605e
+Hudson-Version: 2.361.4
+Jenkins-Version: 2.361.4
+Plugin-Dependencies: pipeline-groovy-lib:629.vb_5627b_ee2104,workflow-ap
+ i:1208.v0cc7c6e0da_9e,workflow-basic-steps:1010.vf7a_b_98e847c1,workflo
+ w-cps:3641.vf58904a_b_b_5d8,workflow-durable-task-step:1234.v019404b_38
+ 32a,workflow-multibranch:733.v109046189126,workflow-scm-step:400.v6b_89
+ a_1317c9a_,workflow-support:839.v35e2736cfd5c,credentials-binding:523.v
+ d859a_4b_122e6,credentials:1189.vf61b_a_5e2f62e,git-client:4.2.0,mailer
+ :448.v5b_97805e3767,pipeline-input-step:466.v6d0a_5df34f81,pipeline-sta
+ ge-step:305.ve96d0205c1c6,scm-api:631.v9143df5b_e4a_a,structs:324.va_f5
+ d6774f3a_d,pipeline-model-api:2.2125.vddb_a_44a_d605e,pipeline-model-ex
+ tensions:2.2125.vddb_a_44a_d605e,pipeline-stage-tags-metadata:2.2125.vd
+ db_a_44a_d605e
+Plugin-Developers: Andrew Bayer:abayer:
+Plugin-License-Name: MIT
+Plugin-License-Url: https://opensource.org/licenses/MIT
+Plugin-ScmUrl: https://github.com/jenkinsci/pipeline-model-definition-pl
+ ugin
+
