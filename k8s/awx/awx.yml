@@ -2,7 +2,7 @@
     apiVersion: awx.ansible.com/v1beta1
     kind: AWX
     metadata:
-      name: awx
+      name: pi
     spec:
       service_type: nodeport
       nodeport_port: 30080
