@@ -1,0 +1,16 @@
+# /etc/systemd/system/netbox-compose.service
+
+[Unit]
+Description=Run Netbox container without human interaction
+After=docker.service
+Requires=docker.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=/home/jsp/netbox-docker
+ExecStart=/bin/bash -c "docker compose up -d"
+ExecStop=/bin/bash -c "docker compose stop"
+
+[Install]
+WantedBy=multi-user.target

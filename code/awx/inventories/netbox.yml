@@ -1,0 +1,14 @@
+plugin: netbox.netbox.nb_inventory
+api_endpoint: 
+token:
+validate_certs: false
+interfaces: true
+group_names_raw: true
+group_by:
+  - device_roles
+  - sites
+  - device_types
+  - manufacturers
+  - platforms
+device_query_filters:
+  - has_primary_ip: false
