@@ -1,5 +1,5 @@
 plugin: netbox.netbox.nb_inventory
-api_endpoint: http://192.168.1.161
+api_endpoint: http://192.168.1.161:8000
 token: c54e69ccf4f6150172ec5d61d164e8fd819a93d1
 validate_certs: false
 interfaces: true
@@ -10,5 +10,3 @@ group_by:
   - device_types
   - manufacturers
   - platforms
-device_query_filters:
-  - has_primary_ip: false
