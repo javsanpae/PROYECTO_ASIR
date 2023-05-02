@@ -1,6 +1,6 @@
 plugin: netbox.netbox.nb_inventory
-api_endpoint: 
-token:
+api_endpoint: http://192.168.1.161
+token: c54e69ccf4f6150172ec5d61d164e8fd819a93d1
 validate_certs: false
 interfaces: true
 group_names_raw: true
