@@ -1,0 +1,12 @@
+---
+manufacturer: Cisco
+model: Catalyst 3600
+slug: cisco-catalyst-3600
+part_number: CATALYST-3600
+is_full_depth: true
+u_height: 1
+interfaces:
+  - name: FastEthernet0/0
+    type: 100BASE-TX (10/100ME)
+  - name: Ethernet1/0
+    type: 100BASE-TX (10/100ME)
