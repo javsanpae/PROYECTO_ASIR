@@ -29,6 +29,8 @@ fi
 echo "Descargando contenedores necesarios..."
 docker compose pull &>/dev/null
 
+sudo cp netbox-compose.service /etc/systemd/system/
+
 read -rp "¿Quieres iniciar ya Netbox? [Y/n] " iniciar
 
 case $iniciar in
