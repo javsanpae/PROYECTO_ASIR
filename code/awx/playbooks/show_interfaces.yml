@@ -1,0 +1,7 @@
+---
+- name: Execute Show IP Interface Brief command
+  hosts: cisco
+  tasks:
+    - name: command
+      ios_command: 
+        commands: show ip interface brief
