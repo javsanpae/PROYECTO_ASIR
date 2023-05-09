@@ -1,0 +1,11 @@
+---
+- name: Configurar un banner de inicio de sesión
+  cisco.ios.ios_banner:
+    banner: login
+    text: |
+      Hola Mundo! Si estás 
+      leyendo esto significa que
+      la ejecución del playbook
+      fue correcta y podemos
+      seguir adelante.
+    state: present
