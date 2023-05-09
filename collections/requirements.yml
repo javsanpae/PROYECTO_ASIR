@@ -2,3 +2,4 @@
 collections:
   - netbox.netbox
   - community.general
+  - Cisco.Ios
