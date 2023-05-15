@@ -10,7 +10,7 @@
     ios_command:
       commands:
         - show run
-      provider:
-        authorize: yes
-        auth_pass: cisco
+    provider:
+      authorize: yes
+      auth_pass: cisco
     register: show_run
