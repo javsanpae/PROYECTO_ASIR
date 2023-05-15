@@ -1,0 +1,20 @@
+---
+- name: Configuración General
+  hosts: cisco
+  tasks:
+
+  - name: Añadir Banner
+    ios_banner:
+      banner: login
+      text: |
+        Hola Mundo! Si estás 
+        leyendo esto significa que
+        la ejecución del playbook
+        fue correcta y podemos
+        seguir adelante.
+      state: present
+
+  - name: Add loopback
+    ios_interface:
+      name: Loopback21
+      state: present 
