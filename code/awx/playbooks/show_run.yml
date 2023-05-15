@@ -1,16 +1,16 @@
 ---
 
 - name: Basic Show Commands
-hosts: cisco
-gather_facts: False
-connection: local
+  hosts: cisco
+  gather_facts: False
+  connection: local
 
-tasks:
- - name: show run
-   ios_command:
-     commands:
-      - show run
-     provider:
-       authorize: yes
-       auth_pass: cisco
-   register: show_run
+  tasks:
+  - name: show run
+    ios_command:
+      commands:
+        - show run
+      provider:
+        authorize: yes
+        auth_pass: cisco
+    register: show_run
