@@ -13,8 +13,3 @@
         fue correcta y podemos
         seguir adelante.
       state: present
-
-  - name: Add loopback
-    ios_interface:
-      name: Loopback21
-      state: present 
