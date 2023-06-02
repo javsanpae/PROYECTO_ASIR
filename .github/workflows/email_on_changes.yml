@@ -1,0 +1,58 @@
+name: Notificaciones Correo
+
+on:
+  push:
+    branches:
+      - main
+  delete:
+  create:
+  
+jobs:
+  send-push:
+    name: Encendiendo los sistemas
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout código fuente
+        uses: actions/checkout@v2
+
+      - name: Configurar Git
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+      - name: Obtener detalles de los archivos
+        id: file-details
+        run: |
+          git diff-tree --no-commit-id --name-only -r ${{ github.sha }} > modified.txt
+          git diff-tree --no-commit-id --name-only --diff-filter=A -r ${{ github.sha }} > added.txt
+          git diff-tree --no-commit-id --name-only --diff-filter=D -r ${{ github.sha }} > removed.txt
+      - name: Leer archivos modificados
+        id: read-modified
+        run: |
+          echo "MODIFIED=$(cat modified.txt)" >> $GITHUB_ENV
+      - name: Leer archivos añadidos
+        id: read-added
+        run: |
+          echo "ADDED=$(cat added.txt)" >> $GITHUB_ENV
+      - name: Leer archivos borrados
+        id: read-removed
+        run: |
+          echo "REMOVED=$(cat removed.txt)" >> $GITHUB_ENV
+      - name: Enviando correo electrónico
+        uses: dawidd6/action-send-mail@v3.6.1
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.EMAIL_ADD }}
+          password: ${{ secrets.PWD_EMAIL }}
+          subject: "Se ha realizado una acción en el repositorio"
+          from: github <noreply@github.com>
+          to: jaime.sanchez.hita@kyndryl.com
+          body: |
+            Acción: ${{ github.event_name }}
+            Repo: ${{ github.repository }}
+            Commit: ${{ github.sha }}
+            Autor: ${{ github.actor }}
+            Detalles:
+            - Archivos modificados: ${{ env.MODIFIED }}
+            - Archivos borrados: ${{ env.REMOVED }}
+            - Archivos creados: ${{ env.ADDED }}
