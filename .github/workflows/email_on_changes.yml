@@ -1,6 +1,7 @@
 name: Notificaciones Correo
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -9,7 +10,7 @@ on:
   
 jobs:
   send-push:
-    name: Encendiendo los sistemas
+    name: Mandar un correo con las actualizaciones del repositorio
     runs-on: ubuntu-latest
     steps:
       - name: Checkout código fuente
@@ -42,11 +43,11 @@ jobs:
         with:
           server_address: smtp.gmail.com
           server_port: 465
-          username: ${{ secrets.EMAIL_ADD }}
-          password: ${{ secrets.PWD_EMAIL }}
+          username: ${{ secrets.EMAIL_ADDRESS }}
+          password: ${{ secrets.EMAIL_PASSWD }}
           subject: "Se ha realizado una acción en el repositorio"
           from: github <noreply@github.com>
-          to: jaime.sanchez.hita@kyndryl.com
+          to: javsanpae@gmail.com
           body: |
             Acción: ${{ github.event_name }}
             Repo: ${{ github.repository }}
