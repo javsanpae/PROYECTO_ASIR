@@ -1,22 +1,30 @@
 # NETWORKING AUTOMATIZADO CON GITOPS - Javier Sánchez Páez
 
-En este repositorio se podrán ver los cambios y versiones que voy añadiendo al proyecto para la asignatura PI (proyecto integrado). Para poder descargarlo, tan solo habrá que ejecutar en una shell:
+## ¿Qué es este Repositorio?
+
+Este repositorio incluye todo el contenido utilizado para el módulo "Proyecto Integrado" de Administración de Sistemas Informáticos en Red. Esta asignatura transcurre al mismo tiempo que la Formación en Centros de Trabajo (*FCT*) y consiste en un proyecto de temática libre que se entregará al final del Ciclo Formativo para conseguir la titulación de **"Técnico Superior en Administración de Sistemas Informáticos en Red"**
+
+Todo el contenido de este proyecto está guardado en una única rama (main) y la licencia utilizada es la GNU GPLv3 (para más info entra en el archivo LICENSE).
+
+Para clonar este proyecto en tu equipo local ejecuta el siguiente comando:
 
 ```
 git clone git@github.com:javsanpae/PROYECTO_ASIR.git
 ```
 
-## Idea del proyecto
+## Idea del proyecto "Networking Automatizado: Solucionando los problemas de la Infraestructura Clásica"
 
-Cada vez que tenemos que pensar en hacer cambios en una red nos echamos las manos a la cabeza. Es fácil que, al momento, nos vengan pensamientos de:
+A lo largo de los años ha habido una evolución muy marcada en el ámbito de la programación y de la informática en general, aunque siempre se ha obviado la parte más crítica: la infraestructura de red.
+La infraestructura de red, como ya sabemos, es difícil de operar, mantener, actualizar y reparar. Lo que se mostrará en este proyecto es cómo podemos utilizar las novedades del ámbito de programación y la infraestructura como código en el campo de "Networking".
 
-- ¿Cómo voy a configurar mis dispositivos de uno en uno?
-- ¿Cómo voy a aprenderme todos los comandos que tiene cada uno de los sistemas operativos para dispositivos de red?
-- ¿Y si no funciona lo que quiero hacer?
+Este proyecto, a su vez, utiliza un patrón de flujo de trabajo llamado GitOps. Este patrón nos permite, entre otros beneficios, **uniformidad** en todos los entornos desde donde operamos la infraestructura. Para aprovechar GitOps necesitamos, entre otras cosas, utilizar Git como única fuente de la verdad (SoT) y tener todos nuestros datos alojados en el repositorio (incluídos los secrets).
 
-Es por ello que nació la idea de **Infraestructura como código (IaC)**. De esta manera, podíamos hacer cambios en nuestra infraestructura de forma simple y fácil, pero todavía se nos escapa un posible escenario: **¿Y si no funciona lo que quiero hacer?**. Para dar una solución a este problema, tenemos que hablar de GitOps.
+## ¿Dudas?
 
-### GitOps
+Si quieres utilizar este proyecto para uso propio, comercial o como base para tu Proyecto Integrado eres completamente libre de hacerlo (siempre que sigas las indicaciones de la licencia). 
 
-En resumidas cuentas, lo que GitOps nos permite es tener un mejor control del software que vayamos escribiendo y usando nuestro repositorio (GitHub, Gitlab, Bitbucket) como **fuente de la verdad**. Básicamente la fuente de la verdad significa que todo el código fuente con el que automaticemos la infraestructura vendrá del repositorio y no permitiremos cambios "desde fuera". Implícitamente con GitOps también tendremos un concepto añadido: Guardar todos los datos (incluidos secrets) en el repositorio. De esta manera tendremos una infraestructura "portable".
-Así, si usamos GitOps en conjunción con herramientas CI/CD (Jenkins, Ansible) tendremos un flujo de trabajo automatizado, estable y que puede reaccionar a errores haciendo rollbacks.
+Si tienes alguna duda puedes contactarme de cualquiera de las siguientes formas:
+
+  - [LinkTree](https://linktr.ee/javsanpae)
+  - [LinkedIn](https://www.linkedin.com/in/javsanpae/)
+  - [Twitter](https://twitter.com/javsanpae)
