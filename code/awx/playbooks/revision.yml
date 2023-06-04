@@ -1,0 +1,58 @@
+---
+- name: Revisión de configuración de los routers Cisco
+  hosts: cisco
+  tasks:
+
+    - name: Poner nombre y dominio por defecto
+      ios_system:
+        hostname: RouterAWX
+        domain_name: pi.local
+        domain_search:
+          - ansible.com
+          - cisco.com
+
+    - name: Añadir banner personalizado
+      ios_banner:
+        banner: login
+        text: |
+          |----------------------------------------|
+          | YOU ARE ACCESING A RESTRICTED SYSTEM.  |
+          |----------------------------------------|
+          | IF YOU ARE NOT A NETWORK ENGINEER AND  |
+          | YOU DO NOT BELONG TO THIS ORGANIZATION |
+          | LEAVE NOW OR LEGAL ACTIONS WILL BE     |
+          | TAKEN AGAINST YOU.                     |
+          |----------------------------------------|
+          | FOR ANY ISSUES, PLEASE CONTACT         |
+          | jsanchez155@ieszaidinvergeles.org      |
+          | IMMEDIATELY.                           |
+          |----------------------------------------|
+
+    - name: Ping al servidor ProxMox
+      ios_ping:
+        dest: 192.168.1.160
+
+    - name: Crear usuario "ansible"
+      ios_user:
+        name: ansible
+        configured_password: ansible
+        password_type: password
+        state: present
+
+    - name: Crear VLAN_10
+      cisco.ios.ios_vlans:
+        config:
+        - name: VLAN_10
+          vlan_id: 10
+          state: active
+          shutdown: disabled
+          remote_span: true
+        state: present
+
+    - name: Lista la configuración actual
+      ios_command:
+        - show running config
+
+    - name: Guarda los cambios cuando haya modificaciones
+      ios_config:
+        save_when: modified

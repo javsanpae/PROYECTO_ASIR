@@ -1,5 +1,5 @@
 ---
-- name: Configuración General
+- name: Configurar banner en Routers Cisco
   hosts: cisco
   tasks:
 
