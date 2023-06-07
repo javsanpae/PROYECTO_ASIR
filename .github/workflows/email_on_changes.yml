@@ -19,7 +19,7 @@ jobs:
           server_port: 465
           username: ${{ secrets.EMAIL_ADDRESS }}
           password: ${{ secrets.EMAIL_PASSWD }}
-          subject: "${{ github.repository }} ha detectado nuevos cambios"
+          subject: "Se detectó un ${{ github.event_name }} en el repositorio ${{ github.repository }}."
           from: github <noreply@github.com>
           to: javsanpae@gmail.com
           body: |
@@ -28,5 +28,5 @@ jobs:
             Commit: ${{ github.sha }}
             Autor: ${{ github.actor }}
 
-            Se han detectado nuevos cambios en el repositorio. Para comprobarlos, ve a https://github.com/javsanpae/PROYECTO_ASIR.git .
+            Se han detectado nuevos cambios en el repositorio. Para comprobarlos, ve a https://github.com/javsanpae/PROYECTO_ASIR .
 
