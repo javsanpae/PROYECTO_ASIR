@@ -4,6 +4,7 @@
   tasks:
 
     - name: Poner nombre y dominio por defecto
+      become: true
       ios_system:
         hostname: RouterAWX
         domain_name: pi.local
@@ -12,47 +13,41 @@
           - cisco.com
 
     - name: Añadir banner personalizado
+      become: true
       ios_banner:
         banner: login
         text: |
-          |----------------------------------------|
-          | YOU ARE ACCESING A RESTRICTED SYSTEM.  |
-          |----------------------------------------|
-          | IF YOU ARE NOT A NETWORK ENGINEER AND  |
-          | YOU DO NOT BELONG TO THIS ORGANIZATION |
-          | LEAVE NOW OR LEGAL ACTIONS WILL BE     |
-          | TAKEN AGAINST YOU.                     |
-          |----------------------------------------|
-          | FOR ANY ISSUES, PLEASE CONTACT         |
-          | jsanchez155@ieszaidinvergeles.org      |
-          | IMMEDIATELY.                           |
-          |----------------------------------------|
-
-    - name: Ping al servidor ProxMox
-      ios_ping:
-        dest: 192.168.1.160
+           YOU ARE ACCESING A RESTRICTED SYSTEM!
+           IF YOU ARE NOT A NETWORK ENGINEER AND  
+           YOU DO NOT BELONG TO THIS ORGANIZATION 
+           LEAVE NOW OR LEGAL ACTIONS WILL BE     
+           TAKEN AGAINST YOU.                     
+           FOR ANY ISSUES, PLEASE CONTACT AN ADMIN
+           IMMEDIATELY.
 
     - name: Crear usuario "ansible"
+      become: true
       ios_user:
         name: ansible
         configured_password: ansible
         password_type: password
         state: present
-
-    - name: Crear VLAN_10
-      cisco.ios.ios_vlans:
+    
+    - name: Crear VLAN
+      become: true
+      ios_vlans:
         config:
-        - name: VLAN_10
-          vlan_id: 10
+        - name: printers
           state: active
+          vlan_id: 155
           shutdown: disabled
-          remote_span: true
-        state: present
 
     - name: Lista la configuración actual
+      become: true
       ios_command:
-        - show running config
+        commands: show running config
 
     - name: Guarda los cambios cuando haya modificaciones
+      become: true
       ios_config:
         save_when: modified
