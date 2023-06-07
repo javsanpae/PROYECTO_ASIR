@@ -1,23 +1,19 @@
 name: Notificaciones Correo
-
-on:
-  workflow_dispatch:
-  push:
-    branches:
-      - main
-  delete:
-  create:
-  
+on: 
+    push:
+    delete:
+    create:
 jobs:
   send-push:
-    name: Mandar un correo con las actualizaciones del repositorio
+    name: Mandar e-mail al detectar un nuevo Push en el repositorio
     runs-on: ubuntu-latest
     steps:
       - name: Checkout código fuente
         uses: actions/checkout@v2
 
-      - name: Enviando correo electrónico
+      - name: Enviando correo electronico
         uses: dawidd6/action-send-mail@v3.6.1
+        
         with:
           server_address: smtp.gmail.com
           server_port: 465
@@ -33,3 +29,4 @@ jobs:
             Autor: ${{ github.actor }}
 
             Se han detectado nuevos cambios en el repositorio. Para comprobarlos, ve a https://github.com/javsanpae/PROYECTO_ASIR.git .
+
