@@ -1,4 +1,4 @@
-# NETWORKING AUTOMATIZADO CON GITOPS - Javier Sánchez Páez
+# NETWORKING AUTOMATIZADO: Resolviendo los problemas de la infraestructura clásica - Javier Sánchez Páez
 
 ## ¿Qué es este Repositorio?
 
